@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Linkedin, Send, Download } from 'lucide-react';
 import { cvData } from './data';
+import heroPhoto from './assets/hero-photo.jpg';
 import './index.css';
 
 // Custom Hook for Typing Effect
@@ -167,13 +168,20 @@ function App() {
           
           {/* HERO BANNER */}
           <motion.div className="hero-banner" initial="hidden" animate="visible" variants={itemVariants}>
-            <h1>Discover my <br/><span>Awesome Space!</span></h1>
-            <p>
-              &lt;code&gt; {cvData.summary} &lt;/code&gt;
-            </p>
-            <a href="mailto:nikulenka@gmail.com" className="btn-primary">
-              Написать мне
-            </a>
+            <div className="hero-content-wrapper">
+              <div className="hero-text">
+                <h1>Discover my <br/><span>Awesome Space!</span></h1>
+                <p>
+                  &lt;code&gt; {cvData.summary} &lt;/code&gt;
+                </p>
+                <a href="mailto:nikulenka@gmail.com" className="btn-primary">
+                  Написать мне
+                </a>
+              </div>
+              <div className="hero-image-container">
+                <img src={heroPhoto} alt="Hero Profile" className="hero-image" />
+              </div>
+            </div>
           </motion.div>
 
           {/* EXPERIENCE */}
